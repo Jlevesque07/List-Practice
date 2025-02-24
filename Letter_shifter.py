@@ -2,25 +2,20 @@
 
 # Define a function that takes a string and an integer shift value as parameters  
 def shifter(number: int, word: str) -> str:
-    letter_list = [letter for letter in word]
-    codes = []
+    letter_list = list(word)
     for letter in letter_list:
-        codes.append(ord(letter) + number)
-    for code in codes:
-        chr(code - number)
+        codes.append(chr(ord(letter) + number))
     print(codes)
+    return codes
 
-
+def deshifter(number: int) -> str:
+    reword_list = []
+    for code in codes:
+        reword_list.append(chr(ord(code) - number))
+    print(reword_list)
 
 word = input("Please enter a word. ")
 number = int(input("Pick a number. "))
+codes = []
 shifter(number, word)
-
-
-
-
-fruits = ["banana", "apple", "pineapple"]
-newcodes = []
-
-for fruit in fruits:
-    newcodes.append(ord(fruit) + 5)
+deshifter(number)
