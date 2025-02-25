@@ -4,12 +4,7 @@ def score_adder(score: int) -> list:
     high_scores.append(score)
     high_scores.sort()
     high_scores.reverse()
-    string = []
-    for number in high_scores:
-        string.append(str(number))
-    scores = ''.join(string) 
-    scores.remove[5::]
-    print(scores)
+    return high_scores[:5]
 # Sort the list in descending order
 # Keep only the top 5 scores
 # Return the updated list
@@ -20,6 +15,7 @@ high_scores = []
 while True:
     question = input("Would you like to input a new high score? [y/n] ").strip().lower()
     if question == "y":
-        score_adder(int(input("What is your score? ")))
+        score = int(input("What is your score? "))
+        print(score_adder(score))
     else:
         break
